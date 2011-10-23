@@ -15,6 +15,16 @@ ObjectPtr Object::from(const std::string& arg, bool shouldRelease /* = true */)
     return make_ptr(PyString_FromString(arg.c_str()), shouldRelease);
 }
 
+ObjectPtr Object::from(const std::wstring& arg, bool shouldRelease /* = true */)
+{
+    // Treat given wide-char as a utf16 stream and convert it to a python unicode.
+    Object tmpString(PyString_FromStringAndSize((char*)arg.c_str(), 
+                                                arg.size() * sizeof(wchar_t)));
+    return make_ptr(PyString_AsDecodedObject(tmpString.raw(), 
+                                             "utf16", 
+                                             "replace"), shouldRelease);
+}
+
 ObjectPtr Object::from(long arg, bool shouldRelease /* = true */)
 {
     return make_ptr(PyInt_FromLong(arg), shouldRelease);
@@ -71,6 +81,16 @@ std::string Object::asString() const
     }
 
     return PyString_AsString(m_obj);
+}
+
+std::wstring Object::asWString() const
+{
+    if (!PyUnicode_Check(m_obj)) {
+        throw std::exception("Expected type to be unicode, well it wasn't");
+    }
+
+    const wchar_t* rawStr = (wchar_t*)PyUnicode_AS_DATA(m_obj);
+    return std::wstring(rawStr, PyUnicode_GET_SIZE(m_obj));
 }
 
 std::vector<ObjectPtr> Object::asList() const

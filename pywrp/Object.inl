@@ -20,6 +20,10 @@ template<> std::string Object::as() {
     return asString();
 }
 
+template<> std::wstring Object::as() {
+    return asWString();
+}
+
 template<> long Object::as() {
     return asLong();
 }

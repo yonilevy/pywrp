@@ -20,6 +20,7 @@ public:
 
     /// Creates Objects from different types.
     static ObjectPtr from(const std::string& arg, bool shouldRelease = true);
+    static ObjectPtr from(const std::wstring& arg, bool shouldRelease = true);
     static ObjectPtr from(long arg, bool shouldRelease = true);
     template<typename T> static ObjectPtr from(const std::vector<T>& arg, bool shouldRelease = true);
 
@@ -63,11 +64,13 @@ public:
      */
     long asLong() const;
     std::string asString() const;
+    std::wstring asWString() const;
     ObjectPtrList asList() const;
 
     /// Templated versions of the above
     template<typename T> T as();
     template<> std::string as();
+    template<> std::wstring as();
     template<> long as();
     template<> ObjectPtrList as();
 
