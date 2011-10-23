@@ -14,6 +14,7 @@ public:
     virtual ~Python();
 
     ObjectPtr import(const std::string& name);
+    void addSysPath(const std::string& path);
 };
 
 } // namespace py
