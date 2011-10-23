@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pywrp", "pywrp\pywrp.vcxproj", "{BFA513C3-B016-4F0F-904C-DEAA1AFBBFFA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pywrp_test", "pywrp_test\pywrp_test.vcxproj", "{465A5318-9AD1-4199-B2B1-9EC7CDB91890}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BFA513C3-B016-4F0F-904C-DEAA1AFBBFFA} = {BFA513C3-B016-4F0F-904C-DEAA1AFBBFFA}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFA513C3-B016-4F0F-904C-DEAA1AFBBFFA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BFA513C3-B016-4F0F-904C-DEAA1AFBBFFA}.Debug|Win32.Build.0 = Debug|Win32
+		{BFA513C3-B016-4F0F-904C-DEAA1AFBBFFA}.Release|Win32.ActiveCfg = Release|Win32
+		{BFA513C3-B016-4F0F-904C-DEAA1AFBBFFA}.Release|Win32.Build.0 = Release|Win32
+		{465A5318-9AD1-4199-B2B1-9EC7CDB91890}.Debug|Win32.ActiveCfg = Debug|Win32
+		{465A5318-9AD1-4199-B2B1-9EC7CDB91890}.Debug|Win32.Build.0 = Debug|Win32
+		{465A5318-9AD1-4199-B2B1-9EC7CDB91890}.Release|Win32.ActiveCfg = Release|Win32
+		{465A5318-9AD1-4199-B2B1-9EC7CDB91890}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
